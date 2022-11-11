@@ -16,8 +16,12 @@ int main() {
   alma.writeToFile("../saturate.png");
 
   std::cout << "Using Image::scale to create `scale.png`..." << std::endl;
+  std::cout << "Image Width: " + std::to_string(alma.width()) << std::endl;
+  std::cout << "Image Height: " + std::to_string(alma.height()) << std::endl;
   alma.readFromFile("../alma.png");
-  alma.scale(2);
+  alma.scale(1000, 800);
+  std::cout << "Image Width after scale: " + std::to_string(alma.width()) << std::endl;
+  std::cout << "Image Height after scale: " + std::to_string(alma.height()) << std::endl;
   alma.writeToFile("../scale2x.png");
 
   return 0;

@@ -189,19 +189,21 @@ namespace cs225 {
   void PNG::resize(unsigned int newWidth, unsigned int newHeight) {
     // Create a new vector to store the image data for the new (resized) image
     HSLAPixel * newImageData = new HSLAPixel[newWidth * newHeight];
-
     // Copy the current data to the new image data, using the existing pixel
     // for coordinates within the bounds of the old image size
     for (unsigned x = 0; x < newWidth; x++) {
+      // std::cout << "Error" << std::endl;
       for (unsigned y = 0; y < newHeight; y++) {
-        if (x < width_ && y < height_) {
+        // std::cout << "One" << std::endl;
+        if (x < width_ && y < height_) { //if (x < width_ && y < height_)
+          // std::cout << "Two" << std::endl;
           HSLAPixel & oldPixel = this->getPixel(x, y);
           HSLAPixel & newPixel = newImageData[ (x + (y * newWidth)) ];
           newPixel = oldPixel;
+          // std::cout << "Three" << std::endl;
         }
       }
     }
-
     // Clear the existing image
     delete[] imageData_;
 

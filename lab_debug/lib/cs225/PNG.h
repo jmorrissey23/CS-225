@@ -117,6 +117,11 @@ namespace cs225 {
       */
     void resize(unsigned int newWidth, unsigned int newHeight);
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> release/main
   private:
     unsigned int width_;            /*< Width of the image */
     unsigned int height_;           /*< Height of the image */
